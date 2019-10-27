@@ -27,9 +27,7 @@ jobs:
     - uses: actions/checkout@v1
       with:
         fetch-depth: 3
-    - name: change to lib folder
+    - name: build
       run: |
            cd ./lib/rust
-           ls
-    - name: build
-      run: cargo build --verbose
+           cargo build --verbose
