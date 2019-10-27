@@ -1,15 +1,15 @@
-name: test lib
+name: test library
 
 on: [pull_request]
 
-strategy:
-  fail-fast: false
-  matrix:
-    platform: [ubuntu-latest, macos-latest, windows-latest]
-
 jobs:
-  test:
+  test lib:
     runs-on: ${{ matrix.platform }}
+
+  strategy:
+    fail-fast: false
+    matrix:
+      platform: [ubuntu-latest, macos-latest, windows-latest]
 
     steps:
     - uses: actions/checkout@v1
