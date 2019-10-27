@@ -3,7 +3,7 @@ name: test library
 on: [pull_request]
 
 jobs:
-  test lib:
+  test-lib:
     runs-on: ${{ matrix.platform }}
 
     strategy:
