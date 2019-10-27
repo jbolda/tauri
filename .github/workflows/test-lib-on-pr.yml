@@ -28,6 +28,8 @@ jobs:
       with:
         fetch-depth: 3
     - name: change to lib folder
-      run: cd lib/rust
+      run: |
+           ls
+           cd lib/rust
     - name: build
       run: cargo build --verbose
