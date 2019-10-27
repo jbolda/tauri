@@ -19,6 +19,7 @@ jobs:
       run: |
            cd ./lib/rust
            cargo build
+
   test-bindings:
     runs-on: ${{ matrix.platform }}
 
@@ -34,4 +35,21 @@ jobs:
     - name: build
       run: |
            cd ./bindings/rust
+           cargo build
+
+  test-templates:
+    runs-on: ${{ matrix.platform }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [ubuntu-latest, macos-latest, windows-latest]
+
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        fetch-depth: 3
+    - name: build
+      run: |
+           cd ./templates/rust
            cargo build
